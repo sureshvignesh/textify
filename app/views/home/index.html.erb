@@ -1,0 +1,39 @@
+<body>
+  <div class="jumbotron">
+    <div class="row">
+      <div class="container">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
+          <form>
+              <textarea name="editor" id="editor">
+                <%=  simple_format(@text).gsub('<br />', '<p>') %>
+              </textarea>
+              <script>
+                CKEDITOR.replace( 'editor', {
+                  // on : {
+                  //     // maximize the editor on startup
+                  //     'instanceReady' : function( evt ) {
+                  //        evt.editor.resize("100%", editorElem.clientHeight);
+                  //     } 1`                              u9
+                  //  },
+                  format_tags: 'title;sub;paragraph',
+                  format_title: { element: 'h2', name: 'Title', attributes: { 'class': 'title', 'id': 'title' } },
+                  format_sub: { element: 'h3', name: 'Sub Title', attributes: { 'class': 'sub_title', 'id': 'sub_title' } },
+                  format_paragraph: { element: 'p', name: 'Paragraph', attributes: { 'class': 'paragraph', 'id': 'paragraph' } }
+
+                } );
+                CKEDITOR.config.height = '520px';
+                CKEDITOR.config.width = '100%';
+              </script>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="footer"  style="background-color: #30302d;">
+      <div class="container">
+
+      </div>
+    </div>
+</body>
