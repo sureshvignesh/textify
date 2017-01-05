@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 1
+  subtype: 1
+  ministry: 1
+  published_by: 1
+  number: 1
+  year: 1
+  total_page: 1
+  pdf_file: MyString
+  document_status: 1
+
+two:
+  name: MyString
+  type: 1
+  subtype: 1
+  ministry: 1
+  published_by: 1
+  number: 1
+  year: 1
+  total_page: 1
+  pdf_file: MyString
+  document_status: 1

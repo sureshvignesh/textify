@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: 1
+  from_time: 2017-01-05 19:05:25
+  to_time: 2017-01-05 19:05:25
+  time_taken: 1.5
+  user: one
+  document_page: one
+
+two:
+  status: 1
+  from_time: 2017-01-05 19:05:25
+  to_time: 2017-01-05 19:05:25
+  time_taken: 1.5
+  user: two
+  document_page: two
