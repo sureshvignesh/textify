@@ -30,6 +30,26 @@ CKEDITOR.editorConfig = function( config )
   //
   // // The location of a script that handles file uploads.
   // config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+  config.autosave = 'autosave';
+  config.autosaveTargetUrl = 'http://localhost:3000/autosave';
+  CKEDITOR.editorConfig = function (config) {
+  //config.assets_languages = ['en']
+  config.setLang = ('dialog', 'en');
+  config.setLang = ('lineutils', 'en');
+  config.setLang = ('widget', 'en');
+  config.setLang = ('codesnippet', 'en');
+
+  config.extraPlugins = 'dialog';
+  config.extraPlugins = 'dialogui';
+  config.extraPlugins = 'lineutils';
+  config.extraPlugins = 'clipboard';
+  config.extraPlugins = 'widget';
+  config.extraPlugins = 'codesnippet';
+  }
+
+  config.language = 'en';
+  config.language_list = [ 'en:English', 'es:Spanish' ];
+
 
   config.allowedContent = true;
 
@@ -46,7 +66,8 @@ CKEDITOR.editorConfig = function( config )
     { name: 'insert', items: [  'Table', 'HorizontalRule', 'SpecialChar' ] },
     { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
     { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] }
+    { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
+    { name: 'Save', groups: [ 'save' ], items: ['Source','Save','Preview','-', 'Autosave'] }
   ];
 
   config.toolbar_mini = [

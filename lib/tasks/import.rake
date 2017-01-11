@@ -21,7 +21,7 @@ namespace :import do
               doc_pages.each_with_index do |doc_page,index|
                 processed_text = conn.exec("select * from processeds where document_page_id=#{doc_page['id']}")
                 if processed_text.count != 0
-                  text = text.to_s + "<page doc_id=#{doc['id']} page_no=#{index+1}>"
+                  text = text.to_s + "<br><br><br><page doc_id=#{doc['id']} page_no=#{index+1}>"
                   if processed_text.first['text'] != ""
                     text = text + processed_text.first['text']
                   else
@@ -30,7 +30,7 @@ namespace :import do
                   end
                   text = text + "</page doc_id=#{doc['id']} page_no=#{index+1}>"
                 else
-                  text = text.to_s + "<page doc_id=#{doc['id']} page_no=#{index+1}>"
+                  text = text.to_s + "<br><br><br><page doc_id=#{doc['id']} page_no=#{index+1}>"
                   text += "<h2>Page-#{index+1} Not Found</h2>"
                   text += "</page doc_id=#{doc['id']} page_no=#{index+1}>"
                 end
