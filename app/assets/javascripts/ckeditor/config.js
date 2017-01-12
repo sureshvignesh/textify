@@ -30,8 +30,6 @@ CKEDITOR.editorConfig = function( config )
   //
   // // The location of a script that handles file uploads.
   // config.filebrowserUploadUrl = "/ckeditor/attachment_files";
-  config.autosave = 'autosave';
-  config.autosaveTargetUrl = 'http://localhost:3000/autosave';
   CKEDITOR.editorConfig = function (config) {
   //config.assets_languages = ['en']
   config.setLang = ('dialog', 'en');
@@ -50,9 +48,12 @@ CKEDITOR.editorConfig = function( config )
   config.language = 'en';
   config.language_list = [ 'en:English', 'es:Spanish' ];
 
-
+  config.uiColor = '#2d2b2b';
   config.allowedContent = true;
-
+  config.disableNativeSpellChecker = true;
+  config.extraPlugins = 'indent';
+  config.extraPlugins = 'indentlist';
+  config.extraPlugins = 'indentblock';
   // Toolbar groups configuration.
   config.toolbar = [
     // { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
@@ -64,7 +65,9 @@ CKEDITOR.editorConfig = function( config )
     // { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
     { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
     { name: 'insert', items: [  'Table', 'HorizontalRule', 'SpecialChar' ] },
-    { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+    { name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent','-','JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
+    { name: 'links', items: ['Link', 'Unlink', 'Anchor']},
+    { name: 'editing', items: ['Scayt']},
     { name: 'styles', items: [ 'Styles', 'Format', 'Font', 'FontSize' ] },
     { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
     { name: 'Save', groups: [ 'save' ], items: ['Source','Save','Preview','-', 'Autosave'] }
@@ -76,5 +79,25 @@ CKEDITOR.editorConfig = function( config )
     { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
     { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
     { name: 'insert', items: [  'Table', 'SpecialChar' ] }
+  ];
+
+  config.keystrokes =
+  [
+      [ CKEDITOR.ALT + 121 /*F10*/, 'toolbarFocus' ],
+      [ CKEDITOR.ALT + 122 /*F11*/, 'elementsPathFocus' ],
+
+      [ CKEDITOR.SHIFT + 121 /*F10*/, 'contextMenu' ],
+
+      [ CKEDITOR.CTRL + 90 /*Z*/, 'undo' ],
+      [ CKEDITOR.CTRL + 89 /*Y*/, 'redo' ],
+      [ CKEDITOR.CTRL + CKEDITOR.SHIFT + 90 /*Z*/, 'redo' ],
+
+      [ CKEDITOR.CTRL + 76 /*L*/, 'link' ],
+
+      [ CKEDITOR.CTRL + 66 /*B*/, 'bold' ],
+      [ CKEDITOR.CTRL + 73 /*I*/, 'italic' ],
+      [ CKEDITOR.CTRL + 85 /*U*/, 'underline' ],
+
+      [ CKEDITOR.ALT + 109 /*-*/, 'toolbarCollapse' ]
   ];
 };

@@ -16,6 +16,8 @@
             <%#=  simple_format(@text).gsub('<br />', '<p>') %>
           </textarea>
           <script>
+
+
             CKEDITOR.replace( 'editor', {
             // on : {
             //     // maximize the editor on startup
@@ -23,7 +25,7 @@
             //        evt.editor.resize("100%", editorElem.clientHeight);
             //     } 1`                              u9
             //  },
-            format_tags: 'title;sub;paragraph',
+            format_tags: 'p;h1;h2;h3;h4;h5;h6;pre;address;div;title;sub;paragraph',
             format_title: { element: 'p', name: 'Title', attributes: { 'class': 'title', 'id': 'title' } },
             format_sub: { element: 'p', name: 'Sub Title', attributes: { 'class': 'sub_title', 'id': 'sub_title' } },
             format_paragraph: { element: 'p', name: 'Paragraph', attributes: { 'class': 'paragraph', 'id': 'paragraph' } },
