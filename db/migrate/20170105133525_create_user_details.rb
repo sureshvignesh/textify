@@ -4,7 +4,7 @@ class CreateUserDetails < ActiveRecord::Migration[5.0]
       t.integer :status
       t.datetime :from_time
       t.datetime :to_time
-      t.float :time_taken
+      t.string :time_taken
       t.references :user, foreign_key: true
       t.references :document_page, foreign_key: true
 

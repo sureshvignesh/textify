@@ -7,21 +7,29 @@ class HomeController < ApplicationController
   end
 
   def submit
-    # processed_text = params[:data]
-    # document_page = params[:doc_page_id]
-    processed = Processed.create(text: text, document_page_id: params[:doc_page_id].id)
+    processed = Processed.create(text: params['editor'], document_page_id: params['document_page'])
     processed.document_page.update(status: 3)
     processed.document_page.document.update(document_status: 3)
+    user_detail = UserDetail.find_by(document_page_id: params['document_page'])
+    user_detail.update(status: 3,to_time: Time.now())
+    user_detail.update(time_taken: time_difference(user_detail.to_time,user_detail.from_time))
     redirect_to home_index_path
   end
 
-
+  def time_difference(to_time,from_time)
+    diff = to_time - from_time
+    mm, ss = diff.divmod(60)
+    hh, mm = mm.divmod(60)
+    dd, hh = hh.divmod(24)
+    difference = "%d:%d:%d:%d" % [dd, hh, mm, ss]
+    return difference
+  end
   def autosave
     # params['autosave'].gsub!(/<br(\s*\/)?>/, '')
     params['autosave'].gsub!('<br />','')
     params['autosave'].gsub!('&nbsp;','')
     params['autosave'].gsub!(/<p>[\s$]*<\/p>/, '')
-    params['autosave'].gsub!("\n",'')
+    # params['autosave'].gsub!("\n",'')
     DocumentPage.find(params[:doc_page_id]).update(temp_text: params['autosave'])
     render :json => { success: "Data Saved", status:200 }, status:200
   end

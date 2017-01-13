@@ -14,7 +14,7 @@ function autoSave() {
     var doc_page_id = $('#document_page_id').val()
     $.ajax({
 	        type: "post",
-	        url: "autosave",
+	        url: "/home/autosave",
 	        data: { doc_name: doc_name, doc_page_id: doc_page_id, autosave: data },
 		});
 }

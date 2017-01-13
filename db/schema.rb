@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170105133525) do
     t.integer  "status"
     t.datetime "from_time"
     t.datetime "to_time"
-    t.float    "time_taken"
+    t.string   "time_taken"
     t.integer  "user_id"
     t.integer  "document_page_id"
     t.datetime "created_at",       null: false

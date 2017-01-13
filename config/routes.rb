@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
 
-  post 'autosave' => 'home#autosave'
+  post '/home/autosave' => 'home#autosave'
+  post 'submit' => 'home#submit'
   get 'home/completed_docs' => 'home#completed_docs'
 end
