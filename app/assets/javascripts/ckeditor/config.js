@@ -54,6 +54,7 @@ CKEDITOR.editorConfig = function( config )
   config.extraPlugins = 'indent';
   config.extraPlugins = 'indentlist';
   config.extraPlugins = 'indentblock';
+  config.enterMode = CKEDITOR.ENTER_BR;
   // Toolbar groups configuration.
   config.toolbar = [
     // { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },

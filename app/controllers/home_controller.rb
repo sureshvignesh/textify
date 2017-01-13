@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     @user_doc = assign_document_to_user()
-    @text = @user_doc.document_page.temp_text
+    @text = @user_doc.document_page.text
     @file_name = "/"+@user_doc.document_page.document.name + ".pdf"
   end
 
@@ -26,9 +26,9 @@ class HomeController < ApplicationController
   end
   def autosave
     # params['autosave'].gsub!(/<br(\s*\/)?>/, '')
-    params['autosave'].gsub!('<br />','')
-    params['autosave'].gsub!('&nbsp;','')
-    params['autosave'].gsub!(/<p>[\s$]*<\/p>/, '')
+    # params['autosave'].gsub!('<br />','')
+    # params['autosave'].gsub!('&nbsp;','')
+    # params['autosave'].gsub!(/<p>[\s$]*<\/p>/, '')
     # params['autosave'].gsub!("\n",'')
     DocumentPage.find(params[:doc_page_id]).update(temp_text: params['autosave'])
     render :json => { success: "Data Saved", status:200 }, status:200

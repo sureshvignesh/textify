@@ -12,7 +12,7 @@
           <input type="hidden" id="document_page_id" name="document_page" value= <%= @user_doc.document_page_id %> />
           <textarea name="editor" id="editor">
             <%#= (@text).gsub('<br />', '<p>') %>
-            <%= simple_format(@text, {}) %>
+            <%= simple_format(@text, {}, :sanitize => true) %>
             <%#=  simple_format(@text).gsub('<br />', '<p>') %>
           </textarea>
           <script>
@@ -21,7 +21,7 @@
               format_title: { element: 'p', name: 'Title', attributes: { 'class': 'title', 'id': 'title' } },
               format_sub: { element: 'p', name: 'Sub Title', attributes: { 'class': 'sub_title', 'id': 'sub_title' } },
               format_paragraph: { element: 'p', name: 'Paragraph', attributes: { 'class': 'paragraph', 'id': 'paragraph' } },
-              format_paragraph: { element: 'pre', name: 'Sidenote', attributes: { 'class': 'sidenote', 'id': 'sidenote' } },
+              format_pre: { element: 'pre', name: 'Sidenote', attributes: { 'class': 'sidenote', 'id': 'sidenote' } },
             } );
             CKEDITOR.config.height = '520px';
             CKEDITOR.config.width = '100%';
