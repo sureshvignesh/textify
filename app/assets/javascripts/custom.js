@@ -8,18 +8,28 @@ $(document).ready(function() {
     });
     var editor = CKEDITOR.instances.editor;
 
-  
+    // editor.on( 'contentDom', function() {
+    //     var editable = editor.editable();
+    //     editable.attachListener( editable, 'click', function() {
+    //
+    //         var range = editor.getSelection().getRanges()[ 0 ];
+    //         var startNode = range.startContainer;
+    //         var page_no = startNode.$.getAttributeNode("page_no").value;
+    //         console.log(page_no);
+    //     } );
+    //
+    // } );;
 
-    var element = CKEDITOR.document.getById('sidenote');
-    element.on('click', function (ev) {
-
-        alert("Click");
-    });
-
-    var range = editor.getSelection().getRanges()[ 0 ];
-    var startNode = range.startContainer;
-    var page_no = startNode.$.getAttributeNode("page_no").value;
-    console.log(page_no);
+    // var element = CKEDITOR.document.getById('sidenote');
+    // element.on('click', function (ev) {
+    //
+    //     alert("Click");
+    // });
+    //
+    // var range = editor.getSelection().getRanges()[ 0 ];
+    // var startNode = range.startContainer;
+    // var page_no = startNode.$.getAttributeNode("page_no").value;
+    // console.log(page_no);
 });
 
 function autoSave() {

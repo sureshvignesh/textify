@@ -55,6 +55,7 @@ CKEDITOR.editorConfig = function( config )
   config.extraPlugins = 'indentlist';
   config.extraPlugins = 'indentblock';
   config.enterMode = CKEDITOR.ENTER_BR;
+  config.extraPlugins = "button-h1,button-h2,button-h3,button-h4,button-h5,button-h6";
   // Toolbar groups configuration.
   config.toolbar = [
     // { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
@@ -99,6 +100,33 @@ CKEDITOR.editorConfig = function( config )
       [ CKEDITOR.CTRL + 73 /*I*/, 'italic' ],
       [ CKEDITOR.CTRL + 85 /*U*/, 'underline' ],
 
-      [ CKEDITOR.ALT + 109 /*-*/, 'toolbarCollapse' ]
+      [ CKEDITOR.ALT + 109 /*-*/, 'toolbarCollapse' ],
+      [ CKEDITOR.ALT + 65 /*A*/, 'anchor' ],
+      [ CKEDITOR.CTRL + 77 /*M*/, 'indent' ],
+      [ CKEDITOR.CTRL + CKEDITOR.SHIFT + 77 /*M*/, 'outdent' ],
+      [ CKEDITOR.CTRL + CKEDITOR.SHIFT + 88 /*X*/, 'strike' ],
+      [ CKEDITOR.CTRL + 13 /*ENTER*/, 'pagebreak' ],
+      [ CKEDITOR.ALT + 13 /*ENTER*/, 'pagebreak' ],
+      [ CKEDITOR.CTRL + 56 /*8*/, 'bulletedlist' ],
+      [ CKEDITOR.CTRL + CKEDITOR.SHIFT + 56 /*8*/, 'bulletedListStyle' ],
+      [ CKEDITOR.CTRL + 73 /*I*/, 'italic' ],
+      [ CKEDITOR.CTRL + 74 /*J*/, 'justifyblock' ],
+      [ CKEDITOR.CTRL + 69 /*E*/, 'justifycenter' ],
+      [ CKEDITOR.CTRL + 76 /*L*/, 'justifyleft' ],
+      [ CKEDITOR.CTRL + 82 /*R*/, 'justifyright' ],
+      [ CKEDITOR.CTRL + 55 /*7*/, 'numberedlist' ],
+      [ CKEDITOR.CTRL + CKEDITOR.SHIFT + 55 /*7*/, 'numberedListStyle' ],
+      [ CKEDITOR.CTRL + 89 /*Y*/, 'redo' ],
+      [ CKEDITOR.ALT + 68 /*D*/, 'creatediv' ],
+      [ CKEDITOR.ALT + 72 /*H*/, 'horizontalrule' ],
+      [ CKEDITOR.CTRL + CKEDITOR.SHIFT + 70 /*F*/, 'find' ],
+      [ CKEDITOR.CTRL + 113 /*F2*/, 'preview' ],
+      [ CKEDITOR.CTRL + 49 /*1*/, 'button-h1' ],
+      [ CKEDITOR.CTRL + 50 /*2*/, 'button-h2' ],
+      [ CKEDITOR.CTRL + 51 /*3*/, 'button-h3' ],
+      [ CKEDITOR.CTRL + 52 /*4*/, 'button-h4' ],
+      [ CKEDITOR.CTRL + 53 /*5*/, 'button-h5' ],
+      [ CKEDITOR.CTRL + 54 /*6*/, 'button-h6' ]
+
   ];
 };
