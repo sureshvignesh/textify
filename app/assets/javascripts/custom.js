@@ -1,13 +1,31 @@
 $(document).ready(function() {
-    setInterval("autoSave()", 10000);
-    $('#previewButton').click( function () {
-        var contents = CKEDITOR.instances.editor.getData();
-        var mywin = window.open("", "ckeditor_preview", "location=0,status=0,scrollbars=0,width=500,height=500");
-
-        $(mywin.document.body).html(contents);
-    });
+    // setInterval("autoSave()", 10000);
+    // $('#previewButton').click( function () {
+    //     var contents = CKEDITOR.instances.editor.getData();
+    //     var mywin = window.open("", "ckeditor_preview", "location=0,status=0,scrollbars=0,width=500,height=500");
+    //
+    //     $(mywin.document.body).html(contents);
+    // });
     var editor = CKEDITOR.instances.editor;
-
+    editor.addCommand("mySimpleCommand", { // create named command
+        exec: function(edt) {
+        var a = CKEDITOR.instances.editor.getSelectedHtml();
+        var c_length = a.$.children.length
+        var merge_text = ""
+        for (i= 0; i< c_length;i++){
+          merge_text += "<p>"
+          merge_text += a.$.children[i].textContent
+          merge_text += "</p>"
+        }
+        var document_text = CKEDITOR.instances.editor.getData();
+            $.ajax({
+              type: 'post',
+              url: 'home/merge',
+              data: {merge_text: merge_text, document_text: document_text}
+            });
+        }
+    });
+    editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 66 /* B */] = 'mySimpleCommand';
     // editor.on( 'contentDom', function() {
     //     var editable = editor.editable();
     //     editable.attachListener( editable, 'click', function() {

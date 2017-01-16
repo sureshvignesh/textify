@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   post '/home/autosave' => 'home#autosave'
+  post '/home/merge' => 'home#merge'
   post 'submit' => 'home#submit'
   get 'home/completed_docs' => 'home#completed_docs'
 end

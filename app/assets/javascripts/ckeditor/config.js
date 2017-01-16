@@ -52,8 +52,10 @@ CKEDITOR.editorConfig = function( config )
   config.allowedContent = true;
   config.disableNativeSpellChecker = true;
 
+  config.autoParagraph = false;
   config.enterMode = CKEDITOR.ENTER_BR;
-  config.extraPlugins = "button-h1,button-h2,button-h3,button-h4,button-h5,button-h6";
+  config.extraPlugins = "button-h1,button-h2,button-h3,button-h4,button-h5,button-h6,section";
+  config.disallowedContent = 'br';
   // Toolbar groups configuration.
   config.toolbar = [
     // { name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ], items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'Scayt' ] },
@@ -124,8 +126,8 @@ CKEDITOR.editorConfig = function( config )
       [ CKEDITOR.CTRL + 51 /*3*/, 'button-h3' ],
       [ CKEDITOR.CTRL + 52 /*4*/, 'button-h4' ],
       [ CKEDITOR.CTRL + 53 /*5*/, 'button-h5' ],
-      [ CKEDITOR.CTRL + 54 /*6*/, 'button-h6' ]
-      [ CKEDITOR.CTRL + 115 /*6*/, 'save' ]
+      [ CKEDITOR.CTRL + 54 /*6*/, 'button-h6' ],
+      [ CKEDITOR.ALT + 83 /*S*/, 'section' ]
 
   ];
 };

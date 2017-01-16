@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require custom
+//= require ckeditor
