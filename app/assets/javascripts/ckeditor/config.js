@@ -51,9 +51,7 @@ CKEDITOR.editorConfig = function( config )
   config.uiColor = '#2d2b2b';
   config.allowedContent = true;
   config.disableNativeSpellChecker = true;
-  config.extraPlugins = 'indent';
-  config.extraPlugins = 'indentlist';
-  config.extraPlugins = 'indentblock';
+
   config.enterMode = CKEDITOR.ENTER_BR;
   config.extraPlugins = "button-h1,button-h2,button-h3,button-h4,button-h5,button-h6";
   // Toolbar groups configuration.
@@ -127,6 +125,7 @@ CKEDITOR.editorConfig = function( config )
       [ CKEDITOR.CTRL + 52 /*4*/, 'button-h4' ],
       [ CKEDITOR.CTRL + 53 /*5*/, 'button-h5' ],
       [ CKEDITOR.CTRL + 54 /*6*/, 'button-h6' ]
+      [ CKEDITOR.CTRL + 115 /*6*/, 'save' ]
 
   ];
 };
