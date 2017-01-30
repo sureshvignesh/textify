@@ -57,7 +57,7 @@ class HomeController < ApplicationController
 
   def assign_document_to_user
     user_status = UserDetail.find_by(user_id: current_user.id)
-    if !(user_status.present?)
+    if user_status.nil?
       document_page = DocumentPage.find_by(status: 1)
       user_doc = UserDetail.create(user_id: current_user.id, document_page_id:document_page.id, from_time: Time.now(),status: 2)
       document_page.update(status: 2,user_id: current_user.id)

@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: { Admin: 1, User: 2, Hr: 3 }
+
+  def self.where_clause(query,limit)
+    @users = User.where(query).take(limit)
+  end
 end

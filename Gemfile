@@ -33,6 +33,7 @@ gem 'jazz_hands'
 gem 'pry'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'whenever'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
