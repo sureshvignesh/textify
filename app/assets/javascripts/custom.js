@@ -16,13 +16,16 @@ $(document).ready(function() {
           merge_text += "<p>"
           merge_text += a.$.children[i].textContent
           merge_text += "</p>"
+          merge_text += "\n"
+          merge_text += "\n"
         }
         var document_text = CKEDITOR.instances.editor.getData();
-            $.ajax({
-              type: 'post',
-              url: 'home/merge',
-              data: {merge_text: merge_text, document_text: document_text}
-            });
+        merge = merge_text.replace( /<p>/g, "" );
+        merge = merge_text.replace( /<\/?p[^>]*>/g,"" );
+        merge = "<p>" + merge + "</p>"
+
+        var text = document_text.replace(merge_text,merge);
+        CKEDITOR.instances['editor'].setData(text);
         }
     });
     editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 66 /* B */] = 'mySimpleCommand';
