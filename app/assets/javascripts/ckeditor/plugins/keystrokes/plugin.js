@@ -2,7 +2,7 @@
 ( function() {
       CKEDITOR.plugins.add( 'keystrokes', {
         init: function( editor ) {
-            editor.setKeystroke( CKEDITOR.CTRL + 81, 'bold' ); // CTRL+Q
+            editor.setKeystroke( CKEDITOR.CTRL + 81, '' ); // CTRL+Q
         }
     } );
 } )();

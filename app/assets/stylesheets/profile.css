@@ -1,0 +1,22 @@
+
+.profile-container{
+  border: 1px solid #DDD;
+  border-radius: 10px;
+  min-height: 500px;
+  margin-bottom: 50px;
+}
+.profile-name{
+  border: 1px solid #DDD;
+  color: #1F305D;
+  background-color: #F8C94B;
+  text-align: center;
+  border-radius: 10px;
+}
+.profile-document{
+  color: #1F305D;
+  font-family:fantasy;
+  font-size: medium;
+  margin: 10px ;
+  padding: 10px;
+  border-bottom: 1px solid #DDD;
+}

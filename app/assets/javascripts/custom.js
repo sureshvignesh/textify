@@ -13,19 +13,14 @@ $(document).ready(function() {
         var c_length = a.$.children.length
         var merge_text = ""
         for (i= 0; i< c_length;i++){
-          merge_text += "<p>"
           merge_text += a.$.children[i].textContent
-          merge_text += "</p>"
-          merge_text += "\n"
-          merge_text += "\n"
+          merge_text += " "
         }
-        var document_text = CKEDITOR.instances.editor.getData();
-        merge = merge_text.replace( /<p>/g, "" );
-        merge = merge_text.replace( /<\/?p[^>]*>/g,"" );
-        merge = "<p>" + merge + "</p>"
+        var range = CKEDITOR.instances.editor.getSelection().getRanges()[ 0 ];
+        range.deleteContents();
+        range.select();
+        CKEDITOR.instances.editor.insertText(merge_text)
 
-        var text = document_text.replace(merge_text,merge);
-        CKEDITOR.instances['editor'].setData(text);
         }
     });
     editor.keystrokeHandler.keystrokes[CKEDITOR.ALT + 66 /* B */] = 'mySimpleCommand';

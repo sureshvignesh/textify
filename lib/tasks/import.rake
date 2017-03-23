@@ -6,12 +6,12 @@ namespace :import do
             require 'pry'
             require 'pg'
 
-            conn   = PGconn.connect( :hostaddr=>"127.0.0.1", :port=>5432, :dbname=>"ACTtoTEXT_development", :user=>"vinod", :password=>"password")
+            conn   = PGconn.connect( :hostaddr=>"192.168.1.35", :port=>5432, :dbname=>"ACTtoTEXT_development", :user=>"vinod", :password=>"password")
             documents = conn.exec("select * from documents ORDER BY id")
             processeds = conn.exec("select * from processeds")
 
 
-            documents.first(200).each do |doc|
+            documents.each do |doc|
               doc_name = doc['name']
               total_page = doc['total_page']
               completed_page = doc['completed_pages']
