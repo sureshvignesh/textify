@@ -43,6 +43,7 @@ CKEDITOR.editorConfig = function( config )
   config.extraPlugins = 'clipboard';
   config.extraPlugins = 'widget';
   config.extraPlugins = 'codesnippet';
+  config.extraPlugins = 'liststyle';
   }
 
   config.language = 'en';

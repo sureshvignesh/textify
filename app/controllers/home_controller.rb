@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def submit
-    binding.pry
+  
     processed = Processed.create(text: params['editor'], document_page_id: params['document_page'])
     processed.document_page.update(status: 3)
     processed.document_page.document.update(document_status: 3)

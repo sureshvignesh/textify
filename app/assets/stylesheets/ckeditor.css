@@ -1,0 +1,27 @@
+.title{
+  color: #1F305D;
+  font-family:fantasy;
+  font-size: x-large;
+}
+.sub_title{
+  color: #1F305D;
+  font-family:fantasy;
+  font-size: large;
+}
+.section{
+  color: #1F305D;
+  background-color: #F8C94B;
+  padding: 10px 5px;
+  text-align: center;
+  border-radius: 20px;
+  display: inline-block;
+}
+.sidenote {
+  color: #1F305D;
+  font-family:fantasy;
+  font-size: small;
+  text-align: right;
+}
+body {
+    font-family: myFirstFont;
+}
